@@ -9,6 +9,11 @@ pipeline {
 '''
           }
         }
+        stage('Checking PhantomJS version') {
+          steps {
+            sh 'phantomjs -v'
+          }
+        }
         stage('Installing Dependencies') {
           steps {
             sh 'npm install'
