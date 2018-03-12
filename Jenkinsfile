@@ -4,7 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Comenzando la face de build'
+            }
+            steps {
+                echo 'Building dependencies'
+                sh 'node -v'
+                sh 'npm install'
             }
         }
         stage('Test') {
