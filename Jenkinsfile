@@ -1,38 +1,21 @@
 pipeline {
-  agent any
-  stages {
-    stage('Start') {
-      parallel {
-        stage('Start') {
-          steps {
-            sh '''echo "Hello World"
-'''
-          }
-          steps {
-            sh '''echo "Hola Mundo"
-'''
-          }
-          steps {
-            sh '''echo "Otro comando Mundo"
-'''
-          }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-        stage('Checking NodeJS version') {
-          steps {
-            sh 'nodejs -v'
-          }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-        stage('Checking PhantomJS version') {
-          steps {
-            sh 'phantomjs -v'
-          }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
-        stage('Installing Dependencies') {
-          steps {
-            sh 'npm install'
-          }
-        }
-      }
     }
-  }
 }
