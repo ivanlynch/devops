@@ -12,6 +12,10 @@ pipeline {
             sh '''echo "Hola Mundo"
 '''
           }
+          steps {
+            sh '''echo "Otro comando Mundo"
+'''
+          }
         }
         stage('Checking NodeJS version') {
           steps {
